@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malik Mangue | Software Developer & Designer</title>
+<meta name="description" content="Portefólio de Malik Mangue: desenvolvimento web, análise e arquitectura de sistemas, UI/UX e suporte técnico em Maputo, Moçambique.">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+:root{--red:#e63946;--red2:#c92c39;--ink:#1a1a1a;--muted:#555;--gray:#e3e3e3;--white:#fff;--max:1100px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"Josefin Sans",system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.7;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),90%);margin:auto}
+section{padding:90px 0;position:relative}
+.gray{background:var(--gray)}
+h2.t{font-size:clamp(2.2rem,6vw,3.6rem);text-align:center;font-weight:700;margin-bottom:46px}
+h2.t em{color:var(--red);font-style:normal}
+.red{color:var(--red)}
+.btn{display:inline-block;padding:12px 32px;border-radius:99px;background:var(--red);color:#fff;font:700 1rem inherit;font-family:inherit;border:0;cursor:pointer;transition:background .25s,box-shadow .25s}
+.btn:hover{background:var(--red2);box-shadow:0 10px 26px rgba(230,57,70,.35)}
+.btn.o{background:transparent;color:var(--ink);border:2px solid var(--ink)}.btn.o:hover{background:var(--ink);color:#fff}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:200}
+header{position:fixed;inset:0 0 auto;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.12);z-index:100}
+nav{display:flex;justify-content:space-between;align-items:center;height:70px}
+.logo{font-size:1.7rem;font-weight:400;letter-spacing:.02em}
+.links{display:flex;gap:28px;list-style:none}
+.links a{font-size:.88rem;font-weight:700;position:relative;padding:4px 0}
+.links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--red);transition:width .3s}
+.links a:hover::after,.links a.on::after{width:100%}
+.burger{display:none;background:none;border:0;font-size:1.8rem;cursor:pointer}
+#inicio{min-height:100vh;display:flex;align-items:center;padding:110px 0 70px;overflow:hidden}
+#cv{position:absolute;inset:0;width:100%;height:100%}
+.hero{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(2.8rem,8vw,5.2rem);line-height:1.05;font-weight:700}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px) rotate(6deg);animation:up .7s forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.type{font-size:1.4rem;font-weight:600;margin:14px 0;min-height:2.2rem}.type b{color:var(--red)}
+.type i{display:inline-block;width:2px;height:1.2em;background:var(--red);vertical-align:-3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.d{max-width:480px;margin-bottom:26px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.ph{position:relative;max-width:380px;margin:auto}
+.ph::before{content:"";position:absolute;inset:18px -18px -18px 18px;background:var(--red);border-radius:24px;z-index:0}
+.ph img{position:relative;z-index:1;border-radius:24px;filter:grayscale(1);transition:filter .6s;aspect-ratio:4/5;object-fit:cover;width:100%}
+.ph:hover img{filter:grayscale(0)}
+.ring{position:absolute;width:120px;height:120px;right:-50px;top:-40px;z-index:2;animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stats{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:60px;text-align:center}
+.stats b{display:block;font-size:2.6rem;color:var(--red);line-height:1}.stats small{font-weight:600}
+.mq{background:var(--ink);color:#fff;overflow:hidden;padding:16px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mq 28s linear infinite;font-size:1.3rem;font-weight:700;letter-spacing:.08em}
+.mq span{color:var(--red);margin:0 22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center}
+.about img{border-radius:6px;filter:grayscale(1);width:100%;aspect-ratio:3/4;object-fit:cover;box-shadow:14px 14px 0 var(--red)}
+.about h3{margin:12px 0 6px}.about p{margin-bottom:10px;text-align:justify}
+.info{margin:16px 0}.info b{margin-right:4px}
+.sk{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.bars{display:grid;gap:20px}
+.top{display:flex;justify-content:space-between;font-weight:600;letter-spacing:.06em;font-size:.95rem;margin-bottom:4px}
+.tr{height:7px;background:#fff;border-radius:9px;overflow:hidden}
+.fl{height:100%;width:0;background:var(--red);border-radius:9px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
+.radar{background:#fff;border-radius:18px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.radar h4{text-align:center;font-weight:700}
+#rd polygon.v{transform-origin:160px 150px;transform:scale(0);transition:transform 1.3s cubic-bezier(.2,.8,.2,1)}
+#rd.in polygon.v{transform:scale(1)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:44px}
+.chips span{background:#fff;padding:5px 18px;border-radius:99px;font-weight:600;font-size:.9rem;transition:.25s}
+.chips span:hover{background:var(--red);color:#fff;transform:translateY(-4px) rotate(-3deg)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{position:relative;background:var(--gray);border:8px solid #f1f1f1;outline:1px solid var(--gray);padding:24px;transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .3s;will-change:transform;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(230,57,70,.22),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{box-shadow:0 22px 40px rgba(0,0,0,.18)}.card:hover::after{opacity:1}
+.ic{width:64px;height:64px;background:#fff;display:grid;place-items:center;font-size:1.55rem;color:var(--red);margin-bottom:14px;border:5px solid var(--gray);outline:4px solid #fff;transition:.3s}
+.card:hover .ic{background:var(--red);color:#fff;transform:translateZ(30px) rotate(-8deg)}
+.card h3{letter-spacing:.08em;margin-bottom:6px;font-size:1.05rem}.card p{font-size:.95rem}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps::before{content:"";position:absolute;top:34px;left:6%;height:3px;width:0;background:var(--red);transition:width 1.6s}
+.steps.in::before{width:88%}
+.st{text-align:center;position:relative}
+.st b{width:68px;height:68px;border-radius:50%;background:#fff;border:3px solid var(--red);color:var(--red);display:grid;place-items:center;margin:0 auto 12px;font-size:1.4rem;transition:.3s}
+.st:hover b{background:var(--red);color:#fff;transform:scale(1.12)}
+.sw{display:flex;gap:10px;justify-content:center;margin-top:44px;flex-wrap:wrap;align-items:center}
+.sw i{width:52px;height:52px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.2);transition:.3s}.sw i:hover{transform:translateY(-8px) rotate(8deg)}
+.tabs{display:flex;gap:10px;justify-content:center;margin-bottom:30px}
+.tab{padding:8px 24px;border-radius:99px;border:2px solid var(--ink);background:none;font:700 .95rem "Josefin Sans";cursor:pointer;transition:.25s}
+.tab.act{background:var(--red);border-color:var(--red);color:#fff}
+.gal{columns:3;column-gap:20px}
+.gal figure{position:relative;break-inside:avoid;margin-bottom:20px;overflow:hidden;cursor:zoom-in;box-shadow:6px 8px 0 rgba(0,0,0,.85);transition:transform .35s}
+.gal figure:hover{transform:translate(-4px,-4px) rotate(-.6deg)}
+.gal img{width:100%;transition:transform .6s}.gal figure:hover img{transform:scale(1.07)}
+.gal figcaption{position:absolute;inset:auto 0 0;padding:30px 14px 12px;color:#fff;font-weight:700;background:linear-gradient(transparent,rgba(0,0,0,.85));transform:translateY(100%);transition:transform .35s}
+.gal figure:hover figcaption{transform:none}
+.dev{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.tag{display:inline-block;background:#fff;font-size:.78rem;font-weight:700;padding:1px 12px;border-radius:99px;margin:8px 6px 0 0}
+.hide{display:none!important}
+.project-link{display:inline-flex;align-items:center;gap:8px;color:var(--red);font-weight:700;margin-top:12px}
+.project-link:hover{color:var(--red2)}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;place-items:center;z-index:300;padding:20px;cursor:zoom-out}
+#lb.open{display:grid}#lb img{max-height:92vh;animation:zi .4s}
+@keyframes zi{from{opacity:0;transform:scale(.7)}}
+.ct{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+.ct h4{margin-top:18px}
+.ct a{color:var(--red);font-weight:600}
+form{display:grid;gap:16px}
+input,textarea{width:100%;padding:12px 18px;border:2px solid #777;border-radius:99px;font:inherit;background:#fff;transition:.25s}
+textarea{border-radius:22px;min-height:120px;resize:vertical}
+input:focus,textarea:focus{outline:0;border-color:var(--red);box-shadow:0 0 0 4px rgba(230,57,70,.15)}
+footer{background:var(--ink);color:#ddd;text-align:center;padding:30px 0;font-size:.95rem}
+footer a{color:var(--red);margin:0 10px;font-weight:700}
+#top{position:fixed;right:24px;bottom:24px;width:50px;height:50px;border-radius:12px;background:var(--red);color:#fff;border:0;font-size:1.4rem;cursor:pointer;z-index:90;opacity:0;pointer-events:none;transition:.3s}
+#top.s{opacity:1;pointer-events:auto}#top:hover{transform:translateY(-5px)}
+.cd,.cr{position:fixed;top:0;left:0;pointer-events:none;z-index:999;border-radius:50%;display:none}
+.cd{width:8px;height:8px;background:var(--red);margin:-4px 0 0 -4px}
+.cr{width:38px;height:38px;border:2px solid var(--red);margin:-19px 0 0 -19px;transition:width .25s,height .25s,margin .25s,background .25s}
+.cr.h{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(230,57,70,.12)}
+@media(pointer:fine){.cd,.cr{display:block}}
+.grp{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px}
+.grp h4{color:var(--red);letter-spacing:.06em;margin-bottom:10px}
+.grp .chips{justify-content:flex-start;margin-top:0;gap:8px}
+.wk{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 28px;margin-top:20px;list-style:none}
+.wk li{padding:10px 16px;background:#fff;border-left:4px solid var(--red);font-weight:600;font-size:.95rem;transition:.25s}
+.wk li:hover{transform:translateX(6px)}
+.wk i{color:var(--red);width:24px;margin-right:8px;text-align:center}
+.lk2{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+.rv{opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.grp{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){
+.hero,.about,.sk,.ct{grid-template-columns:1fr}.hero .ph{order:-1;max-width:260px}
+.cards{grid-template-columns:repeat(2,1fr)}.steps,.stats{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}
+.gal{columns:2}.dev{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+.burger{display:block}
+.links{position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:0 5%;box-shadow:0 10px 18px rgba(0,0,0,.12);max-height:0;overflow:hidden;transition:max-height .4s}
+.links.open{max-height:420px}.links a{display:block;padding:14px 0;border-top:1px solid var(--gray)}
+section{padding:64px 0}
+}
+@media(max-width:520px){.cards{grid-template-columns:1fr}.gal{columns:1}.cta .btn{width:100%;text-align:center}.grp,.wk{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv,.hero h1 span{opacity:1;transform:none}.fl{width:var(--w)!important}}
+</style>
+</head>
+<body>
+<div id="prog"></div><div class="cd" id="cd"></div><div class="cr" id="cr"></div>
+
+<header><div class="wrap"><nav>
+<a href="#inicio" class="logo">Malik Mangue</a>
+<button class="burger" id="bg" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
+<ul class="links" id="lk">
+<li><a href="#inicio">Inicio</a></li><li><a href="#sobre">Sobre</a></li><li><a href="#skills">Skills</a></li>
+<li><a href="#servicos">Serviços</a></li><li><a href="#design">Design</a></li><li><a href="#projetos">Projectos</a></li><li><a href="#contactos">Contacto</a></li>
+</ul>
+</nav></div></header>
+
+<section id="inicio">
+<canvas id="cv"></canvas>
+<div class="wrap">
+<div class="hero">
+<div>
+<h1 id="nm">Malik Mangue</h1>
+<div class="type">Sou <b id="tp"></b><i></i></div>
+<p class="d">Pessoa movida por curiosidade, criatividade e vontade constante de aprender. Tenho grande interesse em tecnologia, <span class="red">programação</span>, <span class="red">design</span> e <span class="red">comunicação</span>.</p>
+<div class="cta"><a href="#contactos" class="btn mag">Me Contacte</a><a href="#projetos" class="btn o mag">Ver projectos</a></div>
+</div>
+<div class="ph" data-par="0.04">
+<svg class="ring" viewBox="0 0 120 120"><defs><path id="c" d="M60 60m-46 0a46 46 0 1 1 92 0a46 46 0 1 1-92 0"/></defs><text font-size="12" font-weight="700" fill="#e63946" letter-spacing="3"><textPath href="#c">DESIGN · CÓDIGO · CRIATIVIDADE ·</textPath></text></svg>
+<img src="WhatsApp Image 2026-11-05 at 14.24.17.jpeg" alt="Malik Mangue">
+</div>
+</div>
+<div class="stats">
+<div><b data-n="15">0</b><small>Tecnologias</small></div>
+<div><b data-n="9">0</b><small>Repositórios no GitHub</small></div>
+<div><b data-n="4">0</b><small>Sistemas criados</small></div>
+<div><b data-n="5">0</b><small>Projectos de design</small></div>
+</div>
+</div>
+</section>
+
+<div class="mq"><div id="mq"></div></div>
+
+<section id="sobre"><div class="wrap rv">
+<h2 class="t">Sobre <em>Mim</em></h2>
+<div class="about">
+<img src="WhatsApp Image 2026-11-05 at 14.24.18.jpeg" alt="Malik Mangue" loading="lazy">
+<div>
+<h3>Bem-vindo ao <span class="red">Meu Portefólio</span></h3>
+<h3>É um prazer apresentar-me</h3>
+<p>Sou <b class="red">Malik Edson Mangue</b>, uma pessoa movida por curiosidade, criatividade e vontade constante de aprender. Tenho grande interesse em tecnologia, programação, design e comunicação, e busco sempre desenvolver novas habilidades para me tornar cada vez mais completo e capaz de resolver desafios do mundo real. Meu objectivo é construir uma carreira sólida, contribuindo com projectos que tenham impacto positivo e que me permitam evoluir continuamente.</p>
+<p>Como <b class="red">Software Developer</b>, foco-me em perceber como o software funciona por dentro: interfaces, lógica de aplicação, bases de dados, APIs e arquitectura. A minha abordagem: <b>perceber o problema → desenhar a solução → construir → testar → analisar → melhorar.</b></p>
+<h3>Os meus valores</h3>
+<p>Sou um jovem cristão que procura a excelência, sem limitar a aprendizagem a uma única dimensão, procurando sempre explorar novas ideias e conhecimentos.</p>
+<div class="info">
+<div><b>Telefone:</b> +258 86 342 4646</div>
+<div><b>E-mail:</b> mlktecno@gmail.com</div>
+<div><b>GitHub:</b> <a class="red" href="https://github.com/Malik-Mangue" target="_blank" rel="noopener">github.com/Malik-Mangue</a></div>
+<div><b>LinkedIn:</b> <a class="red" href="https://www.linkedin.com/in/malik-mangue-058575376/" target="_blank" rel="noopener">Malik Mangue</a></div>
+</div>
+<a href="cv" class="btn mag">Meu CV</a>
+</div>
+</div>
+</div></section>
+
+<section id="skills" class="gray"><div class="wrap rv">
+<h2 class="t">Minhas <em>Skills</em></h2>
+<div class="sk">
+<div class="bars" id="bars"></div>
+<div class="radar"><h4>Perfil por área</h4><svg id="rd" viewBox="0 0 320 300" role="img" aria-label="Gráfico radar de competências"></svg></div>
+</div>
+<div class="grp">
+<div><h4>BACKEND</h4><div class="chips"><span>Java</span><span>Spring Boot</span><span>PHP</span><span>Node.js</span></div></div>
+<div><h4>FRONTEND</h4><div class="chips"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span></div></div>
+<div><h4>BASES DE DADOS</h4><div class="chips"><span>PostgreSQL</span><span>MySQL</span></div></div>
+<div><h4>FERRAMENTAS</h4><div class="chips"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Linux</span><span>Figma</span></div></div>
+</div>
+<h3 style="margin-top:46px;text-align:center">Em que estou a <span class="red">trabalhar</span></h3>
+<ul class="wk">
+<li><i class="fa-solid fa-layer-group"></i>Aplicações web estruturadas, com separação de responsabilidades</li>
+<li><i class="fa-brands fa-java"></i>Aprofundar Java e Spring Boot</li>
+<li><i class="fa-brands fa-react"></i>Frontend com JavaScript e React</li>
+<li><i class="fa-solid fa-database"></i>Bases de dados relacionais e SQL</li>
+<li><i class="fa-solid fa-shield-halved"></i>Autenticação, autorização e protecção de rotas</li>
+<li><i class="fa-solid fa-diagram-project"></i>Arquitectura de software e escalabilidade</li>
+<li><i class="fa-solid fa-robot"></i>Agentes de IA no desenvolvimento de software</li>
+<li><i class="fa-solid fa-vial"></i>Testes e revisão crítica do código</li>
+</ul>
+</div></section>
+
+<section id="servicos"><div class="wrap rv">
+<h2 class="t">Meus <em>Serviços</em></h2>
+<div class="cards">
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-code"></i></div><h3>DESENVOLVIMENTO WEB</h3><p>Desenvolvimento de websites e aplicações web modernos, responsivos e funcionais, com atenção à qualidade do código, desempenho, segurança e experiência do utilizador.</p></div>
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-pen-ruler"></i></div><h3>UI / UX DESIGN</h3><p>Desenho e prototipagem de interfaces intuitivas, acessíveis e funcionais, considerando a usabilidade, a organização visual e as necessidades dos utilizadores.</p></div>
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-vial-circle-check"></i></div><h3>TESTES DE SOFTWARE</h3><p>Verificação e validação de aplicações através de testes funcionais, identificação de erros, análise de resultados e avaliação da qualidade e fiabilidade do software.</p></div>
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-database"></i></div><h3>BASE DE DADOS</h3><p>Modelação, criação e gestão de bases de dados relacionais, definição de tabelas, relacionamentos, chaves e consultas SQL, garantindo integridade e consistência dos dados.</p></div>
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-diagram-project"></i></div><h3>ANÁLISE E ARQUITECTURA DE SISTEMAS</h3><p>Levantamento e análise de requisitos, modelação de sistemas com diagramas UML, definição de casos de uso, identificação de entidades e planeamento da arquitectura das aplicações.</p></div>
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>SUPORTE TÉCNICO</h3><p>Diagnóstico e resolução de problemas informáticos, instalação e configuração de sistemas operativos, softwares, equipamentos e redes de computadores.</p></div>
+</div>
+</div></section>
+
+<section id="design" class="gray"><div class="wrap rv">
+<h2 class="t">Como eu <em>Desenho</em></h2>
+<div class="steps" id="steps">
+<div class="st"><b>01</b><h3>Descobrir</h3><p>Entender o cliente, o público e os objectivos.</p></div>
+<div class="st"><b>02</b><h3>Desenhar</h3><p>Esboços e identidade visual no Photoshop, Canva e Figma.</p></div>
+<div class="st"><b>03</b><h3>Construir</h3><p>Transformar a ideia em código ou arte final.</p></div>
+<div class="st"><b>04</b><h3>Entregar</h3><p>Testar, ajustar e entregar o trabalho organizado.</p></div>
+</div>
+<div class="sw"><i style="background:#e63946"></i><i style="background:#1a1a1a"></i><i style="background:#e3e3e3"></i><i style="background:#fff"></i><span style="margin-left:10px;font-weight:600">A paleta do meu portefólio</span></div>
+</div></section>
+
+<section id="projetos"><div class="wrap rv">
+<h2 class="t"><em>Projectos</em></h2>
+<div class="tabs"><button class="tab act mag" data-f="g">Design gráfico</button><button class="tab mag" data-f="d">Desenvolvimento</button></div>
+<div class="gal" id="g">
+<figure><img loading="lazy" src="img/_Summer pjcocktail Flyer (3).jpg" alt="Flyer Welcome Summer PJ Cocktails"><figcaption>Welcome Summer · PJ Cocktails</figcaption></figure>
+<figure><img loading="lazy" src="img/Blue &amp; Orange Modern Travel Promotion Poster Portrait.png" alt="Flyer Mini Drinks PJ Cocktails"><figcaption>Mini Drinks · PJ Cocktails</figcaption></figure>
+<figure><img loading="lazy" src="img/Flyer copy.jpg" alt="Flyer Faces Salão de Beleza"><figcaption>Faces · Salão de Beleza</figcaption></figure>
+<figure><img loading="lazy" src="img/projeto Mirrior Fashion.png" alt="Projecto Mirror Fashion"><figcaption>Mirror Fashion</figcaption></figure>
+<figure><img loading="lazy" src="img/Promoção quartas e sextas.png" alt="Promoção Faces quartas e sextas"><figcaption>Faces · Promoção</figcaption></figure>
+</div>
+
+<div class="dev hide" id="d">
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-book-open"></i></div><h3>CONCURSO NACIONAL DE LITERATURA</h3><p>Plataforma web relacionada com a gestão do Concurso Nacional de Literatura, desenvolvida para apoiar a organização do processo e dos participantes.</p><span class="tag">Desenvolvimento Web</span><span class="tag">Sistema de gestão</span><a class="project-link" href="https://github.com/miguelnhanee-code/MEC-Concurso-Literario" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-cloud-arrow-up"></i></div><h3>SISTEMA DE ARQUIVO NA NUVEM</h3><p>Plataforma de armazenamento em nuvem que permite utilizar computadores pessoais como nós adicionais de armazenamento. Backend em Spring Boot e frontend em React.</p><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">React</span><span class="tag">PostgreSQL</span><a class="project-link" href="https://github.com/Assembly404/Sistema-Arquivo_Nuvem" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-scissors"></i></div><h3>FACES SYSTEM</h3><p>Sistema de gestão para salão de beleza, com módulos de clientes, serviços, funcionários, atendimentos, pagamentos, caixa, stock, fidelização e relatórios.</p><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">PostgreSQL</span><a class="project-link" href="https://github.com/Vick-Sama-Coder/Faces-System" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-graduation-cap"></i></div><h3>GESTÃO ACADÉMICA</h3><p>Sistema de gestão académica desenvolvido em PHP puro, com arquitectura MVC e ligação a uma base de dados MySQL.</p><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">MVC</span><a class="project-link" href="https://github.com/Malik-Mangue/Gestao_Academica" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-users-gear"></i></div><h3>GESTÃO DE PROFESSORES</h3><p>Aplicação desktop CRUD para gestão de professores, seguindo o padrão arquitectural MVC e utilizando ligação JDBC à base de dados.</p><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">JDBC</span><span class="tag">MySQL</span></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-calendar-days"></i></div><h3>GESTÃO DE TURMAS E HORÁRIOS</h3><p>Sistema para organização de turmas, horários e informação académica.</p><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">MVC</span></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-wallet"></i></div><h3>CONTAS BANCÁRIAS</h3><p>Projecto em Java com aplicação dos princípios da programação orientada a objectos.</p><span class="tag">Java</span><span class="tag">POO</span><a class="project-link" href="https://github.com/Malik-Mangue/Contas_Bancarias-Projeto-" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-code-branch"></i></div><h3>CONTAS BANCÁRIAS · PARTE 1</h3><p>Primeira fase do projecto de contas bancárias, desenvolvida em Java.</p><span class="tag">Java</span><a class="project-link" href="https://github.com/Malik-Mangue/Parte_1-Projeto_contas_bancarias" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+
+<div class="card tilt"><div class="ic"><i class="fa-solid fa-laptop-code"></i></div><h3>WEB DEV PROJECTS</h3><p>Repositório com exercícios e projectos desenvolvidos durante o curso de desenvolvimento web da freeCodeCamp.</p><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><a class="project-link" href="https://github.com/Malik-Mangue/Web_Dev_Projects" target="_blank" rel="noopener">Ver no GitHub <i class="fa-brands fa-github"></i></a></div>
+</div>
+
+<div class="lk2">
+<a class="btn mag" href="https://github.com/Malik-Mangue" target="_blank" rel="noopener">Meu GitHub</a>
+<a class="btn o mag" href="https://github.com/Malik-Mangue?tab=repositories" target="_blank" rel="noopener">Todos os repositórios</a>
+<a class="btn o mag" href="https://www.linkedin.com/in/malik-mangue-058575376/" target="_blank" rel="noopener">Meu LinkedIn</a>
+</div>
+</div></section>
+
+<section id="contactos" class="gray"><div class="wrap rv">
+<h2 class="t"><em>Contactos</em></h2>
+<div class="ct">
+<div>
+<h4>Ligue-me</h4><p>+258 86 342 4646</p>
+<h4>WhatsApp</h4><p><a href="https://wa.me/258834323726" target="_blank" rel="noopener">+258 83 432 3726</a></p>
+<h4>Envie-me um e-mail</h4><p><a href="mailto:mlktecno@gmail.com">mlktecno@gmail.com</a></p>
+<h4>Redes</h4><p><a href="https://www.linkedin.com/in/malik-mangue-058575376/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Malik-Mangue" target="_blank" rel="noopener">GitHub</a></p>
+</div>
+<form name="contacto" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="contacto">
+<input name="nome" placeholder="Digite o seu nome" required>
+<input type="email" name="email" placeholder="Digite o seu e-mail" required>
+<textarea name="mensagem" placeholder="Digite a sua mensagem" required></textarea>
+<button class="btn mag" type="submit">Enviar</button>
+</form>
+</div>
+</div></section>
+
+<footer>
+<p>© <span id="y"></span> Malik Edson Mangue · Maputo, Moçambique</p>
+<p><a href="https://github.com/Malik-Mangue" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/malik-mangue-058575376/" target="_blank" rel="noopener">LinkedIn</a></p>
+</footer>
+<button id="top" aria-label="Voltar ao topo"><i class="fa-solid fa-arrow-up"></i></button>
+<div id="lb"><img alt=""></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const fine=matchMedia('(pointer:fine)').matches,calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+// Nome letra a letra
+$('#nm').innerHTML=[...'Malik Mangue'].map((c,i)=>`<span style="animation-delay:${i*60}ms">${c===' '?'&nbsp;':c}</span>`).join('');
+
+// Máquina de escrever: áreas apresentadas nos serviços
+const roles=[
+'Desenvolvedor Web',
+'UI/UX Designer',
+'Especialista em Testes de Software',
+'Desenvolvedor de Bases de Dados',
+'Analista e Arquitecto de Sistemas',
+'Técnico de Suporte'
+];
+let ri=0,ci=0,del=false;
+(function ty(){
+const r=roles[ri];
+$('#tp').textContent=r.slice(0,ci);
+if(!del&&ci++===r.length){del=true;return setTimeout(ty,1400)}
+if(del&&--ci<0){del=false;ci=0;ri=(ri+1)%roles.length}
+setTimeout(ty,del?40:80);
+})();
+
+// Marquee
+const tags=['JAVA','SPRING BOOT','PHP','NODE.JS','HTML','CSS','JAVASCRIPT','REACT','POSTGRESQL','MYSQL','GIT','FIGMA','PHOTOSHOP','CANVA','UI/UX','UML','TESTES DE SOFTWARE','ARQUITECTURA'];
+const m=tags.map(t=>t+'<span>•</span>').join('');
+$('#mq').innerHTML=m+m;
+
+// Skills + barras
+const sk=[["HTML & CSS",78],["Redes de Computadores",45],["Java",70],["Linux",70],["SQL",65],["JavaScript",60],["Figma",65],["PHP",60]];
+$('#bars').innerHTML=sk.map(([n,v])=>`<div><div class="top"><span>${n}</span><span>${v}%</span></div><div class="tr"><div class="fl" data-w="${v}" style="--w:${v}%"></div></div></div>`).join('');
+
+// Radar
+const ar=[["Arquitectura",78],["Design",63],["Programação",80],["Redes",58],["Linux",70]],cx=160,cy=150,R=100;
+const pt=(i,v)=>{const a=-Math.PI/2+i*2*Math.PI/ar.length;return[cx+Math.cos(a)*R*v/100,cy+Math.sin(a)*R*v/100]};
+let s='';
+[25,50,75,100].forEach(l=>s+=`<polygon points="${ar.map((_,i)=>pt(i,l).join(',')).join(' ')}" fill="none" stroke="#ddd"/>`);
+ar.forEach(([n,v],i)=>{const[a,b]=pt(i,100),[x,y]=pt(i,122);s+=`<line x1="${cx}" y1="${cy}" x2="${a}" y2="${b}" stroke="#ddd"/><text x="${x}" y="${y}" text-anchor="middle" dominant-baseline="middle" font-size="13" font-weight="700" font-family="Josefin Sans">${n}</text>`});
+s+=`<polygon class="v" points="${ar.map(([n,v],i)=>pt(i,v).join(',')).join(' ')}" fill="rgba(230,57,70,.3)" stroke="#e63946" stroke-width="3"/>`;
+ar.forEach(([n,v],i)=>{const[x,y]=pt(i,v);s+=`<circle cx="${x}" cy="${y}" r="5" fill="#e63946"/>`});
+$('#rd').innerHTML=s;
+
+// Reveal ao scroll + barras
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+if(!e.isIntersecting)return;
+const t=e.target;t.classList.add('in');io.unobserve(t);
+t.querySelectorAll('.fl').forEach(f=>f.style.width=f.dataset.w+'%');
+if(t.id==='rd'||t.querySelector('#rd'))$('#rd').classList.add('in');
+}),{threshold:.15});
+$$('.rv,#steps').forEach(el=>io.observe(el));
+
+// Contadores
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+if(!e.isIntersecting)return;
+const el=e.target,n=+el.dataset.n,t0=performance.now();cio.unobserve(el);
+(function f(t){const p=Math.min((t-t0)/1500,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(el.dataset.s||'+');if(p<1)requestAnimationFrame(f)})(t0);
+}));
+$$('[data-n]').forEach(el=>cio.observe(el));
+
+// Menu
+const lk=$('#lk');
+$('#bg').onclick=()=>lk.classList.toggle('open');
+$$('#lk a').forEach(a=>a.onclick=()=>lk.classList.remove('open'));
+const sec=$$('section[id]'),nav=$$('#lk a');
+const upBtn=$('#top');
+upBtn.onclick=()=>scrollTo({top:0});
+function onS(){
+const y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+$('#prog').style.width=(h>0?y/h*100:0)+'%';
+upBtn.classList.toggle('s',y>400);
+let c=sec[0].id;
+sec.forEach(s=>{if(s.offsetTop-120<=y)c=s.id});
+nav.forEach(a=>a.classList.toggle('on',a.hash==='#'+c));
+if(!calm)$$('[data-par]').forEach(p=>p.style.transform=`translateY(${y*p.dataset.par}px)`);
+}
+addEventListener('scroll',onS,{passive:true});onS();
+
+// Tabs
+$$('.tab').forEach(t=>t.onclick=()=>{
+$$('.tab').forEach(x=>x.classList.remove('act'));
+t.classList.add('act');
+$('#g').classList.toggle('hide',t.dataset.f!=='g');
+$('#d').classList.toggle('hide',t.dataset.f!=='d');
+});
+
+// Lightbox
+const lb=$('#lb'),li=$('#lb img');
+$$('.gal img').forEach(i=>i.onclick=()=>{li.src=i.src;li.alt=i.alt;lb.classList.add('open')});
+lb.onclick=()=>lb.classList.remove('open');
+addEventListener('keydown',e=>e.key==='Escape'&&lb.classList.remove('open'));
+
+if(fine&&!calm){
+// Cursor personalizado
+const cd=$('#cd'),cr=$('#cr');let mx=0,my=0,rx=0,ry=0;
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.transform=`translate(${mx}px,${my}px)`});
+(function l(){rx+=(mx-rx)*.15;ry+=(my-ry)*.15;cr.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(l)})();
+document.addEventListener('mouseover',e=>cr.classList.toggle('h',!!e.target.closest('a,button,.gal figure,.chips span')));
+
+// Tilt 3D + brilho
+$$('.tilt').forEach(c=>{
+c.onmousemove=e=>{
+const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+c.style.transform=`perspective(900px) rotateX(${-(y-r.height/2)/14}deg) rotateY(${(x-r.width/2)/14}deg) scale3d(1.03,1.03,1.03)`;
+c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');
+};
+c.onmouseleave=()=>c.style.transform='';
+});
+
+// Botões magnéticos
+$$('.mag').forEach(b=>{
+b.onmousemove=e=>{
+const r=b.getBoundingClientRect();
+b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.3}px,${(e.clientY-r.top-r.height/2)*.4}px)`;
+};
+b.onmouseleave=()=>b.style.transform='';
+});
+}
+
+// Partículas no hero
+if(!calm){
+const cv=$('#cv'),g=cv.getContext('2d');let W,H,P=[],M={x:-999,y:-999};
+const rs=()=>{
+W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;
+P=Array.from({length:Math.min(70,W/16|0)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6}));
+};
+rs();addEventListener('resize',rs);
+$('#inicio').addEventListener('mousemove',e=>{const r=cv.getBoundingClientRect();M.x=e.clientX-r.left;M.y=e.clientY-r.top});
+(function d(){
+requestAnimationFrame(d);
+if(scrollY>innerHeight)return;
+g.clearRect(0,0,W,H);
+P.forEach((p,i)=>{
+p.x+=p.vx;p.y+=p.vy;
+if(p.x<0||p.x>W)p.vx*=-1;
+if(p.y<0||p.y>H)p.vy*=-1;
+const dx=p.x-M.x,dy=p.y-M.y,dm=Math.hypot(dx,dy);
+if(dm<110&&dm>0){p.x+=dx/dm*1.5;p.y+=dy/dm*1.5}
+g.fillStyle='rgba(230,57,70,.7)';g.beginPath();g.arc(p.x,p.y,2.4,0,7);g.fill();
+for(let j=i+1;j<P.length;j++){
+const q=P[j],ds=Math.hypot(p.x-q.x,p.y-q.y);
+if(ds<120){g.strokeStyle=`rgba(230,57,70,${.22*(1-ds/120)})`;g.beginPath();g.moveTo(p.x,p.y);g.lineTo(q.x,q.y);g.stroke()}
+}
+});
+})();
+}
+$('#y').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
